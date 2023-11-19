@@ -5,7 +5,7 @@ export type FieldErrors<T> = {
 };
 
 export type ActionState<TInput, TOutput> = {
-  fieldErrors: FieldErrors<TInput>;
+  fieldErrors?: FieldErrors<TInput>;
   error?: string | null;
   data?: TOutput;
 };
@@ -22,6 +22,6 @@ export const createSafeAction = <TInput, TOutput>(
           .fieldErrors as FieldErrors<TInput>,
       };
     }
-    return await handler(validationResult.data);
+    return handler(validationResult.data);
   };
 };

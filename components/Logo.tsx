@@ -9,7 +9,13 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
-        <Image src="/images/logo.png" alt="logo" height={30} width={30} />
+        <Image
+          src="/images/logo.png"
+          alt="logo"
+          sizes=""
+          height={30}
+          width={30}
+        />
         <span
           className={cn(
             "text-lg md:text-3xl text-[#38B6FF] pb-1",
