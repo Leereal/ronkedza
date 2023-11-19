@@ -1,1 +1,12 @@
-Viedo - https://www.youtube.com/watch?v=pRybm9lXW2c&ab_channel=CodeWithAntonio
+Video - https://www.youtube.com/watch?v=pRybm9lXW2c&ab_channel=CodeWithAntonio
+
+Technologies Used:
+Next - Frontend and Main
+Typescript - Language
+Prisma - ORM
+MySql - Database
+Zod - for form validation
+Shadcn - for components
+izustand - for state management
+Tailwindcss - for styling
+Clerk - for auth and organization management
