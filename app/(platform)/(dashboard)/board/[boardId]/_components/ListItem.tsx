@@ -1,13 +1,13 @@
 "use client";
 
 import { ElementRef, useRef, useState } from "react";
-// import { Draggable, Droppable } from "@hello-pangea/dnd";
+import { Draggable, Droppable } from "@hello-pangea/dnd";
 
 import { cn } from "@/lib/utils";
 import { ListWithCards } from "@/types";
 
-// import { CardForm } from "./card-form";
-// import { CardItem } from "./card-item";
+import { CardForm } from "./CardForm";
+import { CardItem } from "./CardItem";
 import { ListHeader } from "./ListHeader";
 
 interface ListItemProps {
@@ -32,19 +32,19 @@ export const ListItem = ({ data, index }: ListItemProps) => {
   };
 
   return (
-    // <Draggable draggableId={data.id} index={index}>
-    //   {(provided) => (
-    <li
-      //   {...provided.draggableProps}
-      //   ref={provided.innerRef}
-      className="shrink-0 h-full w-[272px] select-none"
-    >
-      <div
-        // {...provided.dragHandleProps}
-        className="w-full rounded-md bg-[#f1f2f4] shadow-md pb-2"
-      >
-        <ListHeader onAddCard={enableEditing} data={data} />
-        {/* <Droppable droppableId={data.id} type="card">
+    <Draggable draggableId={data.id} index={index}>
+      {(provided) => (
+        <li
+          {...provided.draggableProps}
+          ref={provided.innerRef}
+          className="shrink-0 h-full w-[272px] select-none"
+        >
+          <div
+            {...provided.dragHandleProps}
+            className="w-full rounded-md bg-[#f1f2f4] shadow-md pb-2"
+          >
+            <ListHeader onAddCard={enableEditing} data={data} />
+            <Droppable droppableId={data.id} type="card">
               {(provided) => (
                 <ol
                   ref={provided.innerRef}
@@ -60,17 +60,17 @@ export const ListItem = ({ data, index }: ListItemProps) => {
                   {provided.placeholder}
                 </ol>
               )}
-            </Droppable> */}
-        {/* <CardForm
+            </Droppable>
+            <CardForm
               listId={data.id}
               ref={textareaRef}
               isEditing={isEditing}
               enableEditing={enableEditing}
               disableEditing={disableEditing}
-            /> */}
-      </div>
-    </li>
-    //   )}
-    // </Draggable>
+            />
+          </div>
+        </li>
+      )}
+    </Draggable>
   );
 };
